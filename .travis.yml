@@ -7,13 +7,15 @@ php:
   #- hhvm
   #- nightly
 
+sudo: required
+
 before_script:
   - mkdir bootstrap/cache
   - mkdir storage
   - mkdir storage/framework
   - mkdir storage/framework/cache
-  - chmod -R 777 bootstrap/cache
-  - chmod -R 777 storage
+  - sudo chmod -R 777 bootstrap/cache
+  - sudo chmod -R 777 storage
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
