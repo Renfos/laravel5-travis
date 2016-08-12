@@ -16,10 +16,10 @@ before_script:
   - mkdir storage/framework/cache
   - sudo chmod -R 777 bootstrap/cache
   - sudo chmod -R 777 storage
-  - cp .env.travis .env
+  #- cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
-  - php artisan key:generate
+  #- php artisan key:generate
 
 script:
   - vendor/bin/phpunit
