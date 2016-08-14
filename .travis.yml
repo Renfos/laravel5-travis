@@ -19,6 +19,9 @@ before_script:
   #- cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
+  - php artisan clear-compiled
+  - composer dump-autoload
+  - php artisan optimize
   #- php artisan key:generate
 
 script:
