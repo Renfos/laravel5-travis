@@ -1,29 +1,14 @@
 language: php
 
 php:
-  - 5.5
   - 5.6
   - 7.0
-  #- hhvm
-  #- nightly
-
-sudo: required
 
 before_script:
-  - mkdir bootstrap/cache
-  - mkdir storage
-  - mkdir storage/framework
-  - mkdir storage/framework/cache
-  - sudo chmod -R 777 bootstrap/cache
-  - sudo chmod -R 777 storage
-  #- cp .env.travis .env
+  - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
-  - php artisan clear-compiled
-  - composer dump-autoload
-  - php artisan optimize
-  - php artisan cache:clear
-  #- php artisan key:generate
+  - php artisan key:generate
 
 script:
   - vendor/bin/phpunit
