@@ -8,10 +8,12 @@ before_script:
   - mkdir bootstrap/cache
   - mkdir storage
   - mkdir storage/app
-  - mkdir storage/sessions
-  - mkdir storage/cache
-  - mkdir storage/views
+  - mkdir storage/framework
+  - mkdir storage/framework/sessions
+  - mkdir storage/framework/cache
+  - mkdir storage/framework/views
   - chmod 777 -R storage
+  - chown -R www-data:www-data storage
   - cp .env.travis .env
   - mysql -e 'create database homestead_test;'
   - composer self-update
