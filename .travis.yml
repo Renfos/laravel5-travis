@@ -11,6 +11,7 @@ before_script:
   - mkdir storage/sessions
   - mkdir storage/cache
   - mkdir storage/views
+  - chmod 777 -R storage
   - cp .env.travis .env
   - mysql -e 'create database homestead_test;'
   - composer self-update
