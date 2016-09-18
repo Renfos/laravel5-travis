@@ -6,6 +6,7 @@ php:
 
 before_script:
   - mkdir bootstrap/cache
+  - mkdir storage
   - mkdir storage/sessions
   - mkdir storage/cache
   - mkdir storage/views
